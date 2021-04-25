@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 
 	do {
 		// We only want to operate on the Urban Terror process
-		if (strcmp((const char*)pe32.szExeFile, (const char*)L"Quake3-UrT.exe") == 0) {
+		if (wcscmp(pe32.szExeFile, L"Quake3-UrT.exe") == 0) {
 			// First, we need to get a process handle to use for the following calls
 			HANDLE process = OpenProcess(PROCESS_ALL_ACCESS, true, pe32.th32ProcessID);
 
